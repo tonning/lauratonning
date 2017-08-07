@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $sites = fractal(\App\Site::all(), new \App\Transformers\SiteTransformer())->serializeWith(new \Spatie\Fractalistic\ArraySerializer())->toJson();
+
+    return view('welcome', compact('sites'));
 });

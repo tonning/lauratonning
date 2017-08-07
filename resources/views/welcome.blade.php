@@ -1,95 +1,70 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+@section('content')
+    <section class="hero is-primary is-medium">
+        <!-- Hero header: will stick at the top -->
+        <div class="hero-head">
+            <header class="nav">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item">
+                            <img src="images/logo.png" alt="Logo">
+                        </a>
+                    </div>
+                    <span class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <div class="nav-right nav-menu">
+                        <a class="nav-item is-active">
+                            About
+                        </a>
+                        <a class="nav-item">
+                            Sites Portfolio
+                        </a>
+                        <a href="https://github.com/tonning/" class="nav-item">
+                            <svgicon icon="brands/github" height="24" width="24" class=""></svgicon> GitHub
+                        </a>
+                        <a href="https://twitter.com/tonning" class="nav-item">
+                            <svgicon icon="brands/twitter" height="24" width="24" class=""></svgicon> Twitter
+                        </a>
+                    </div>
                 </div>
-            @endif
+            </header>
+        </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Kristoffer Tonning
+                </h1>
+                <div class="subtitle">
+                    <h3 class="is-size-5"><strong>Laravel</strong> geek | <strong>Vue.js</strong> enthusiast | Lover of <strong>Design</strong> | Husband of <strong>Wife</strong></h3>
+                    <h2 class="is-size-6">Full-stack Web Developer</h2>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+
+        <!-- Hero footer: will stick at the bottom -->
+        {{--<div class="hero-foot">--}}
+            {{--<nav class="tabs">--}}
+                {{--<div class="container">--}}
+                    {{--<ul>--}}
+                        {{--<li class="is-active"><a>Overview</a></li>--}}
+                        {{--<li><a>Modifiers</a></li>--}}
+                        {{--<li><a>Grid</a></li>--}}
+                        {{--<li><a>Elements</a></li>--}}
+                        {{--<li><a>Components</a></li>--}}
+                        {{--<li><a>Layout</a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</nav>--}}
+        {{--</div>--}}
+    </section>
+
+    <portfolio :sites="{{ $sites }}"></portfolio>
+
+
+@endsection
