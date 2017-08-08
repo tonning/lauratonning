@@ -30,6 +30,9 @@
                         <div class="subtitle is-6">
                             <a :href="site.url"><small>{{ site.url }}</small></a>
                         </div>
+                        <p class="content is-small has-text-left">
+                            {{ site.description | truncate(100) }}
+                        </p>
                         <div class="tags">
                             <span v-for="tag in site.tags" class="tag">{{ tag.name }}</span>
                         </div>

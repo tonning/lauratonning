@@ -10,6 +10,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 require('./components')
+require('./filters')
 
 import VueSvgIcon from 'vue-svgicon'
 Vue.use(VueSvgIcon)
