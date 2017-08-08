@@ -23,7 +23,8 @@ class SiteTransformer extends TransformerAbstract
             'url' => $site->url,
             'media' => [
                 'featured' => $site->getFirstMediaUrl('featured', 'browser')
-            ]
+            ],
+            'tags' => $site->tags,
         ];
     }
 }

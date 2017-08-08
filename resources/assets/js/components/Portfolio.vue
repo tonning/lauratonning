@@ -31,12 +31,7 @@
                             <a :href="site.url"><small>{{ site.url }}</small></a>
                         </div>
                         <div class="tags">
-                            <span class="tag">Laravel</span>
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Nginx</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">Beanstalkd</span>
+                            <span v-for="tag in site.tags" class="tag">{{ tag.name }}</span>
                         </div>
                     </figure>
                 </div>
