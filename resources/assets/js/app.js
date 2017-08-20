@@ -23,5 +23,9 @@ Vue.use(VueSvgIcon)
  */
 
 const app = new Vue({
-    el: '#app'
+    data: {
+        showNavbar: false,
+    },
+
+    el: '#app',
 });
