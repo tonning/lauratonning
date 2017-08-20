@@ -4,8 +4,8 @@
         <header class="nav">
             <div class="container">
                 <div class="nav-left">
-                    <a class="nav-item">
-                        <img src="images/logo.png" alt="Logo">
+                    <a class="nav-item" href="/">
+                        <img src="/images/logo.png" alt="Logo">
                     </a>
                 </div>
                 <span class="nav-toggle">
