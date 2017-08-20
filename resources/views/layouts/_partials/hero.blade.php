@@ -20,10 +20,10 @@
                     <a v-scroll-to="'#portfolio'" class="nav-item">
                         Sites Portfolio
                     </a>
-                    <a href="https://github.com/tonning/" class="nav-item">
+                    <a href="https://github.com/tonning/" class="nav-item" target="_blank">
                         <svgicon icon="brands/github" height="24" width="24" class=""></svgicon> GitHub
                     </a>
-                    <a href="https://twitter.com/tonning" class="nav-item">
+                    <a href="https://twitter.com/tonning" class="nav-item" target="_blank">
                         <svgicon icon="brands/twitter" height="24" width="24" class=""></svgicon> Twitter
                     </a>
                     <a href="https://linkedin.com/in/tonning" class="nav-item" target="_blank">
