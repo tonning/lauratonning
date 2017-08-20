@@ -1,4 +1,4 @@
-<section class="hero is-primary is-medium">
+<section class="hero is-primary {{ $size ?? 'is-medium' }}">
     <!-- Hero header: will stick at the top -->
     <div class="hero-head">
         <header class="nav">
