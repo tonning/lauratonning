@@ -26,6 +26,9 @@
                     <a href="https://twitter.com/tonning" class="nav-item">
                         <svgicon icon="brands/twitter" height="24" width="24" class=""></svgicon> Twitter
                     </a>
+                    <a href="https://linkedin.com/in/tonning" class="nav-item" target="_blank">
+                        <svgicon icon="brands/linkedin" height="24" width="24" class=""></svgicon> LinkedIn
+                    </a>
                 </div>
             </div>
         </header>
