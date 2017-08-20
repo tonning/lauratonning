@@ -8,12 +8,12 @@
                         <img src="/images/logo.png" alt="Logo">
                     </a>
                 </div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
                     <a href="{{ route('about') }}" class="nav-item is-active">
                 <span class="nav-toggle" @click="showNavbar = ! showNavbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
                 <div class="nav-right nav-menu" :class="{'is-active': showNavbar}">
                         About
                     </a>
