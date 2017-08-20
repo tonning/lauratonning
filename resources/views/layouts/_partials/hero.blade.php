@@ -42,10 +42,10 @@
             </h1>
             <div class="subtitle">
                 <h3 class="is-size-4">
-                    <strong><a href="https://laravel.com" target="_blank">Laravel</a></strong> geek |
-                    <strong><a href="https://vuejs.org/" target="_blank">Vue.js</a></strong> enthusiast |
-                    Lover of <strong><a href="https://dribbble.com" target="_blank">Design</a></strong> |
-                    Husband of <strong><a href="{{ asset('images/m.jpg') }}" target="_blank">Wife</a></strong></h3>
+                    <strong><a href="https://laravel.com" target="_blank">Laravel</a></strong> geek
+                    | <strong><a href="https://vuejs.org/" target="_blank">Vue.js</a></strong> enthusiast
+                    | Lover of <strong><a href="https://dribbble.com" target="_blank">Functional Design</a></strong>
+                </h3>
                 <h2 class="is-size-5">Full-stack Web Developer</h2>
             </div>
         </div>
