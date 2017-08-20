@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
