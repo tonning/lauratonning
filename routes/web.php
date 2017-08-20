@@ -1,4 +1,5 @@
 <?php
 
-Route::get('/', 'WelcomeController')->name('welcome');
+Route::get('/', 'WelcomeController')
+    ->name('welcome');
 

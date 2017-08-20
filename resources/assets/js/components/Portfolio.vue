@@ -38,63 +38,6 @@
                         </div>
                     </figure>
                 </div>
-
-                <!--<div class="column" :class="gridSize">-->
-                    <!--<figure>-->
-                        <!--<img src="/portfolio/sonotes/desktop/featured.png">-->
-                        <!--<div class="title is-6">-->
-                            <!--Sonotes-->
-                        <!--</div>-->
-                        <!--<div class="subtitle is-6">-->
-                            <!--<a href="sonotes.com"><small>sonotes.com</small></a>-->
-                        <!--</div>-->
-                        <!--<div class="tags">-->
-                            <!--<span class="tag">Laravel</span>-->
-                            <!--<span class="tag">Vue.js</span>-->
-                            <!--<span class="tag">MySQL</span>-->
-                            <!--<span class="tag">Nginx</span>-->
-                            <!--<span class="tag">Redis</span>-->
-                            <!--<span class="tag">Beanstalkd</span>-->
-                            <!--<span class="tag">S3</span>-->
-                        <!--</div>-->
-                    <!--</figure>-->
-                <!--</div>-->
-
-                <!--<div class="column" :class="gridSize">-->
-                    <!--<figure>-->
-                        <!--<img src="/portfolio/zenjilabs/desktop/browser.png">-->
-                        <!--<div class="title is-6">-->
-                            <!--Zenji Labs-->
-                        <!--</div>-->
-                        <!--<div class="subtitle is-6">-->
-                            <!--<a href="sonotes.com"><small>zenjilabs.com</small></a>-->
-                        <!--</div>-->
-                        <!--<div class="tags">-->
-                            <!--<span class="tag">Laravel</span>-->
-                            <!--<span class="tag">Vue.js</span>-->
-                            <!--<span class="tag">MySQL</span>-->
-                            <!--<span class="tag">Nginx</span>-->
-                            <!--<span class="tag">jQuery</span>-->
-                        <!--</div>-->
-                    <!--</figure>-->
-                <!--</div>-->
-
-                <!--<div class="column" :class="gridSize">-->
-                    <!--<figure>-->
-                        <!--<img src="/portfolio/boligcon/desktop/browser.png">-->
-                        <!--<div class="title is-6">-->
-                            <!--Boligcon-->
-                        <!--</div>-->
-                        <!--<div class="subtitle is-6">-->
-                            <!--<a href="boligcon.dk"><small>boligcon.dk</small></a>-->
-                        <!--</div>-->
-                        <!--<div class="tags">-->
-                            <!--<span class="tag">Laravel</span>-->
-                            <!--<span class="tag">jQuery</span>-->
-                            <!--<span class="tag">MySQL</span>-->
-                        <!--</div>-->
-                    <!--</figure>-->
-                <!--</div>-->
             </div>
 
         </div>
