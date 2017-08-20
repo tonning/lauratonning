@@ -5,14 +5,14 @@
             <h2 class="subtitle">
                 A small selection of web application
                 <span class="is-pulled-right">
-                    <span class="is-clickable" @click="changeGridSize('is-12')">
-                        <svgicon icon="unigrid/line/layout-grid-view-1x1" height="24" width="24" :color="gridSizeSelectionColor('is-12')" class=""></svgicon>
+                    <span class="is-clickable" @click="changeGridSize('is-one-third')">
+                        <svgicon icon="unigrid/line/layout-grid-view-3x3" height="21" width="24" :color="gridSizeSelectionColor('is-one-third')" class=""></svgicon>
                     </span>
                     <span class="is-clickable" @click="changeGridSize('is-half')">
-                        <svgicon icon="unigrid/line/layout-grid-view-2x2" height="24" width="24" :color="gridSizeSelectionColor('is-half')" class=""></svgicon>
+                        <svgicon icon="unigrid/line/layout-grid-view-2x2" height="21" width="24" :color="gridSizeSelectionColor('is-half')" class=""></svgicon>
                     </span>
-                    <span class="is-clickable" @click="changeGridSize('is-one-third')">
-                        <svgicon icon="unigrid/line/layout-grid-view-3x3" height="24" width="24" :color="gridSizeSelectionColor('is-one-third')" class=""></svgicon>
+                    <span class="is-clickable" @click="changeGridSize('is-12')">
+                        <svgicon icon="unigrid/line/layout-grid-view-1x1" height="21" width="24" :color="gridSizeSelectionColor('is-12')" class=""></svgicon>
                     </span>
                 </span>
             </h2>
@@ -52,7 +52,7 @@
 
         data() {
             return {
-                gridSize: 'is-half'
+                gridSize: 'is-one-third'
             }
         },
 
