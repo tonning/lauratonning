@@ -8,16 +8,16 @@
                         <img src="/images/logo.png" alt="Logo">
                     </a>
                 </div>
-                    <a href="{{ route('about') }}" class="nav-item is-active">
                 <span class="nav-toggle" @click="showNavbar = ! showNavbar">
                     <span></span>
                     <span></span>
                     <span></span>
                 </span>
                 <div class="nav-right nav-menu" :class="{'is-active': showNavbar}">
+                    <a v-scroll-to="{el: '#about', offset: -40}" class="nav-item is-active">
                         About
                     </a>
-                    <a class="nav-item">
+                    <a v-scroll-to="'#portfolio'" class="nav-item">
                         Sites Portfolio
                     </a>
                     <a href="https://github.com/tonning/" class="nav-item">

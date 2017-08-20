@@ -15,6 +15,9 @@ require('./filters')
 import VueSvgIcon from 'vue-svgicon'
 Vue.use(VueSvgIcon)
 
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo)
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
