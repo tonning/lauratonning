@@ -23,6 +23,16 @@ class Site extends Model implements Sortable, HasMediaConversions
     protected $guarded = [];
 
     /**
+     * A site can have many code samples.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function codeSamples()
+    {
+        return $this->hasMany(CodeSample::class);
+    }
+
+    /**
      * A site can have many tags.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
