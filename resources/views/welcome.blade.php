@@ -19,7 +19,6 @@
                             href="https://github.com/tonning/kristoffertonning">Github</a>
                     (<a href="http://opensource.org/licenses/mit-license.php">MIT</a>).
                 </p>
-                {{--<p>Contact me at <a href="mailto:hello@kristoffertonning.com">hello@kristoffertonning.com</a></p>--}}
                 <p>
                     <a href="https://github.com/tonning/" class="icon" target="_blank">
                         <svgicon icon="brands/github" height="24" width="24" class=""></svgicon>
