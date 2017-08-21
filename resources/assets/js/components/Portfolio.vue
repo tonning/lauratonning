@@ -3,7 +3,9 @@
         <div class="container">
             <h1 class="title">Sites Portfolio</h1>
             <h2 class="subtitle">
-                A small selection of web application
+                A small selection of web application all built and some also designed by me.
+                <br>
+                <small>The full source code for this website is available at <a href="https://github.com/tonning/kristoffertonning">https://github.com/tonning/kristoffertonning</a></small>
                 <span class="is-pulled-right">
                     <span class="is-clickable" @click="changeGridSize('is-one-third')">
                         <svgicon icon="unigrid/line/layout-grid-view-3x3" height="21" width="24" :color="gridSizeSelectionColor('is-one-third')" class=""></svgicon>
