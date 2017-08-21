@@ -53,6 +53,7 @@
                         <figcaption>
                             Code sample {{ $key + 1 }}: {{ $sample->caption }}
                         </figcaption>
+                        <div class="tag">{{ $sample->language }}</div>
                     </figure>
                 @endforeach
             @endunless
