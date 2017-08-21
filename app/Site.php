@@ -23,6 +23,16 @@ class Site extends Model implements Sortable, HasMediaConversions
     protected $guarded = [];
 
     /**
+     * Get the route key for the site.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
      * A site can have many code samples.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -61,6 +71,7 @@ class Site extends Model implements Sortable, HasMediaConversions
     {
         $this->addMediaConversion('browser')
             ->crop(Manipulations::CROP_TOP, 2880, 1800)
+            ->performOnCollections('featured')
             ->optimize();
     }
 }

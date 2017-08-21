@@ -20,19 +20,28 @@
             <div class="columns is-multiline content">
                 <div v-for="site in sites" class="column" :class="gridSize">
                     <figure>
-                        <a :href="site.url" class="is-flex flex-column mb20">
+                        <a :href="'/sites/' + site.slug" class="is-flex flex-column mb20">
                             <img src="images/browser-toolbar.png" alt="browser-toolbar">
                             <img :src="site.media.featured">
                         </a>
+
                         <div class="title is-6">
                             {{ site.name }}
                         </div>
+
                         <div class="subtitle is-6">
                             <a :href="site.url"><small>{{ site.url }}</small></a>
                         </div>
-                        <p class="content is-small has-text-left">
-                            {{ site.description | truncate(100) }}
+
+                        <p class="content has-text-justified">
+                            {{ site.description | truncate(140) }}
                         </p>
+
+                        <div v-if="site.code_samples.length > 0" class="tags has-addons">
+                            <span class="tag">Code samples</span>
+                            <span class="tag is-primary">{{ site.code_samples.length }}</span>
+                        </div>
+
                         <div class="tags">
                             <span v-for="tag in site.tags" class="tag">{{ tag.name }}</span>
                         </div>

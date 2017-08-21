@@ -19,12 +19,14 @@ class SiteTransformer extends TransformerAbstract
         return [
             'id' => $site->id,
             'name' => $site->name,
+            'slug' => $site->slug,
             'description' => $site->description,
             'url' => $site->url,
             'media' => [
                 'featured' => $site->getFirstMediaUrl('featured', 'browser')
             ],
             'tags' => $site->tags,
+            'code_samples' => $site->codeSamples
         ];
     }
 }

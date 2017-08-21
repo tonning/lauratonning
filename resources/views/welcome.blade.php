@@ -10,5 +10,4 @@
     </div>
 
     <portfolio :sites="{{ $sites }}"></portfolio>
-    
 @endsection

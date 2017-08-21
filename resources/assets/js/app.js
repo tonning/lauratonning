@@ -18,6 +18,8 @@ Vue.use(VueSvgIcon)
 import VueScrollTo from 'vue-scrollto'
 Vue.use(VueScrollTo)
 
+import VueHighlightJS from 'vue-highlight.js';
+Vue.use(VueHighlightJS);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
