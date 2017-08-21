@@ -26,7 +26,8 @@ class SiteTransformer extends TransformerAbstract
                 'featured' => $site->getFirstMediaUrl('featured', 'browser')
             ],
             'tags' => $site->tags,
-            'code_samples' => $site->codeSamples
+            'code_samples' => $site->codeSamples,
+            'screenshots' => $site->getMedia('default'),
         ];
     }
 }

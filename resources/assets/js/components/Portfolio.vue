@@ -21,33 +21,46 @@
 
             <div class="columns is-multiline content">
                 <div v-for="site in sites" class="column" :class="gridSize">
-                    <figure>
-                        <a :href="'/sites/' + site.slug" class="is-flex flex-column mb20">
-                            <img src="images/browser-toolbar.png" alt="browser-toolbar">
-                            <img :src="site.media.featured">
-                        </a>
+                    <div class="box content has-text-justified p1">
+                        <figure>
+                            <a :href="'/sites/' + site.slug" class="is-flex flex-column mb20">
+                                <img src="images/browser-toolbar.png" alt="browser-toolbar">
+                                <img :src="site.media.featured">
+                            </a>
 
-                        <div class="title is-6">
-                            {{ site.name }}
-                        </div>
+                            <div class="title is-6">
+                                {{ site.name }}
+                            </div>
 
-                        <div class="subtitle is-6">
-                            <a :href="site.url"><small>{{ site.url }}</small></a>
-                        </div>
+                            <div class="subtitle is-6">
+                                <a :href="site.url" target="_blank"><small>{{ site.url }}</small></a>
+                            </div>
 
-                        <p class="content has-text-justified">
+
+                            <div class="field is-grouped is-grouped-multiline">
+                                <div class="control mb0">
+                                    <div v-if="site.code_samples.length > 0" class="tags has-addons">
+                                        <span class="tag">Code samples</span>
+                                        <span class="tag is-primary">{{ site.code_samples.length }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="control mb0">
+                                    <div v-if="site.screenshots.length > 0" class="tags has-addons">
+                                        <span class="tag">Screenshots</span>
+                                        <span class="tag is-primary">{{ site.screenshots.length }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr v-if="site.description">
                             {{ site.description | truncate(140) }}
-                        </p>
+                            <hr>
+                            <span class="tags">
+                                <span v-for="tag in site.tags" class="tag is-rounded">{{ tag.name }}</span>
+                            </span>
 
-                        <div v-if="site.code_samples.length > 0" class="tags has-addons">
-                            <span class="tag">Code samples</span>
-                            <span class="tag is-primary">{{ site.code_samples.length }}</span>
-                        </div>
-
-                        <div class="tags">
-                            <span v-for="tag in site.tags" class="tag">{{ tag.name }}</span>
-                        </div>
-                    </figure>
+                        </figure>
+                    </div>
                 </div>
             </div>
 
