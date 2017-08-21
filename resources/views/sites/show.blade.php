@@ -51,9 +51,8 @@
                             {{ $sample->snippet }}
                         </highlight-code>
                         <figcaption>
-                            Code sample {{ $key + 1 }}: {{ $sample->caption }}
+                            Code sample {{ $key + 1 }}: <span class="tag">{{ $sample->language }}</span> {{ $sample->caption }}
                         </figcaption>
-                        <div class="tag">{{ $sample->language }}</div>
                     </figure>
                 @endforeach
             @endunless
