@@ -46,7 +46,7 @@
             @unless($site->codeSamples->isEmpty())
                 <h2 class="title is-4" id="code-samples">Code Samples</h2>
                 @foreach($site->codeSamples as $key => $sample)
-                    <figure class="m0 mb50">
+                    <figure class="m0 mb50" v-pre>
                         <highlight-code lang="{{ $sample->language }}">
                             {{ $sample->snippet }}
                         </highlight-code>
