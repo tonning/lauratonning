@@ -50,7 +50,7 @@ class SitesSeeder extends Seeder
         ]);
 
         $this->addSite('Mourning Light Concierce', 'https://mourninglightconcierge.com', [
-            'Laravel', 'Vanila JavaScript'
+            'Laravel', 'Vanilla JavaScript'
         ]);
 
         $this->addSite('Trap Danmark', 'https://trap.dk', [
