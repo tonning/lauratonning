@@ -20,6 +20,6 @@ class DownloadResumeController extends Controller
         Mail::to(config('mail.from.address'))
             ->send(new ResumeDownloaded($request->input('email')));
 
-        return response()->download(storage_path('app/resume.pdf'), 'Tonning, Kristoffer - Resume');
+        return response()->download(storage_path('app/resume.pdf'), 'Tonning, Kristoffer - Resume.pdf');
     }
 }
