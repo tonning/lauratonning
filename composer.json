@@ -9,6 +9,7 @@
         "itsgoingd/clockwork": "^1.14",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "pda/pheanstalk": "^3.1",
         "spatie/eloquent-sortable": "^3.3",
         "spatie/laravel-fractal": "^4.3",
         "spatie/laravel-medialibrary": "^5.0.0",
