@@ -45,14 +45,12 @@
 </template>
 
 <script>
-    export default {
-        computed: {
-            //
-        },
+    import SaveState from 'vue-save-state';
 
+    export default {
         data() {
             return {
-                gridSize: 'is-one-third'
+                gridSize: 'is-one-third',
             }
         },
 
@@ -61,10 +59,20 @@
                 this.gridSize = size
             },
 
+            getSaveStateConfig() {
+                return {
+                    'cacheKey': 'Portfolio',
+                };
+            },
+
             gridSizeSelectionColor(size) {
                 return this.gridSize == size ? '#0396ff' : 'black'
-            }
+            },
         },
+
+        mixins: [
+            SaveState
+        ],
 
         props: {
             sites: { default: {} }
