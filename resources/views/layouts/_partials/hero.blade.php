@@ -14,11 +14,11 @@
                     <span></span>
                 </span>
                 <div class="nav-right nav-menu" :class="{'is-active': showNavbar}">
-                    <a v-scroll-to="{el: '#about', offset: -40}" class="nav-item is-active">
-                        About
+                    <a v-scroll-to="{el: '#about', offset: -40}" class="nav-item">
+                        <strong>About</strong>
                     </a>
                     <a v-scroll-to="'#portfolio'" class="nav-item">
-                        Sites Portfolio
+                        <strong>Sites Portfolio</strong>
                     </a>
                     <a href="https://github.com/tonning/" class="nav-item" target="_blank">
                         <svgicon icon="brands/github" height="24" width="24" class=""></svgicon> GitHub
