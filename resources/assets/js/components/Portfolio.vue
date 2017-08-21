@@ -23,9 +23,11 @@
                 <div v-for="site in sites" class="column" :class="gridSize">
                     <div class="box content has-text-justified p1">
                         <figure>
-                            <a :href="'/sites/' + site.slug" class="is-flex flex-column mb20">
-                                <img src="images/browser-toolbar.png" alt="browser-toolbar">
-                                <img :src="site.media.featured">
+                            <a :href="'/sites/' + site.slug">
+                                <div class="is-flex flex-column mb20">
+                                    <img src="images/browser-toolbar.png" alt="browser-toolbar">
+                                    <img :src="site.media.featured">
+                                </div>
                             </a>
 
                             <div class="title is-6">
