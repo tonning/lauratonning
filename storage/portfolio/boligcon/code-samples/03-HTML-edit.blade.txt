@@ -1,0 +1,15 @@
+@extends('admin.master')
+
+@section('content')
+
+    {!! Form::model($project, ['method' => 'PUT', 'route' => ['admin.project.update', $project->id]]) !!}
+
+        @include('admin.projects.form', ['submitButtonText' => trans('admin.action.update')])
+
+    {!! Form::close() !!}
+
+    @include('admin.projects._notifyOfNewFiles', ['project' => $project])
+
+    @include('admin.partials.modals.upload', ['model' => $project, 'collection' => 'files', 'dropzoneId' => 'filesDropzone', 'callbackImageSize' => 'thumbnail'])
+
+@stop

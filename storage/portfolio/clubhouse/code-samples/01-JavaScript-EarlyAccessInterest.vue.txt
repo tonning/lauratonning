@@ -1,0 +1,67 @@
+<template>
+    <div style="position: absolute; bottom: 60px; z-index: 1; width: 100%;">
+
+        <p v-if="successful" style="color: white; text-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;">Thank you, we will send out invitations later this year.</p>
+
+        <ul v-if="form.errors.any()">
+            <li v-for="errorField in errors">
+                <ul>
+                    <li v-for="error in errorField" v-html="error" style="color: white;"></li>
+                </ul>
+            </li>
+        </ul>
+
+        <form v-on:submit.prevent="requestEarlyAccess()" class="field has-addons" style="justify-content: center;">
+            <div class="control" style="width: 250px;">
+                <input class="input" type="text" placeholder="Enter your email" v-model="form.email">
+            </div>
+            <div class="control">
+                <a @click="requestEarlyAccess()" class="button is-info" :class="{'is-loading': form.processing}">
+                    Notify me
+                </a>
+            </div>
+        </form>
+
+    </div>
+</template>
+
+<script>
+    import Form from 'form-backend-validation'
+
+    export default {
+        computed: {
+            errors() {
+                if (this.responseStatus === 500) {
+                    return {
+                        errors: [
+                            'Whoopsy Daisy, we made a mistake on our end. <br> Please try one more time or email us at <a href="mailto:earlyaccess@clubhouse.team">earlyaccess@clubhouse.team</a>'
+                        ]
+                    }
+                }
+
+                return this.form.errors.all()
+            }
+        },
+
+        data() {
+            return {
+                form: new Form(['email']),
+                successful: false,
+                responseStatus: null,
+            }
+        },
+
+        methods: {
+            requestEarlyAccess() {
+                this.successful = false
+                this.form.post('/api/early-access').then(response => {
+                    this.responseStatus = response.status
+                    this.successful = true
+                }).catch(error => {
+                    this.responseStatus = error.status
+                    this.successful = false
+                })
+            }
+        },
+    }
+</script>

@@ -1,0 +1,35 @@
+class DiamondTransformer extends TransformerAbstract
+{
+    /**
+     * Transform object into a generic array
+     *
+     * @param Diamond $diamond
+     * @return array
+     */
+    public function transform(Diamond $diamond)
+    {
+        return [
+            'id' => (int) $diamond->id,
+            'shape' => $diamond->shape,
+            'carat' => $diamond->weight,
+            'color' => $diamond->color,
+            'clarity' => $diamond->clarity,
+            'cut' => $diamond->cut,
+            'certificate' => ($diamond->lab != 'NONE') ? $diamond->lab : '',
+            'price' => $diamond->total_price->formatInDollars(),
+            'price_bank_wire' => $diamond->total_price->formatInDollars(),
+            'price_per_carat' => $diamond->price_per_carat->formatInDollars(),
+            'stock_number' => $diamond->stock_number,
+            'ratio' => ($diamond->ratio > 0) ? $diamond->ratio : 'N/A',
+            'depth' => $diamond->depth,
+            'table' => $diamond->table,
+            'polish' => $diamond->polish,
+            'symmetry' => $diamond->symmetry,
+            'girdle' => $diamond->girdle,
+            'culet' => $diamond->culet_size,
+            'flourescence_intensity' => $diamond->flourescence_intensity,
+            'flourescence_color' => $diamond->flourescence_color,
+            'measurements' => $diamond->measurements
+        ];
+    }
+}

@@ -93,7 +93,7 @@ class SitesSeeder extends Seeder
      */
     protected function addMedia(Site $site)
     {
-        foreach (Storage::disk('local')->files("portfolio/{$site->slug}/media") as $file) {
+        foreach (Storage::disk('portfolio')->files("{$site->slug}/media") as $file) {
             if (str_contains($file, '.DS_Store')) {
                 continue;
             }
@@ -102,7 +102,7 @@ class SitesSeeder extends Seeder
 
             $caption = Caption::forMedia($file, $site->slug, $titleCase = $collection == 'featured');
 
-            $site->addMedia(storage_path("app/{$file}"))
+            $site->addMedia(storage_path("portfolio/{$file}"))
                 ->preservingOriginal()
                 ->withCustomProperties(['caption' => $caption])
                 ->toMediaCollection($collection);

@@ -1,0 +1,127 @@
+class FaqsController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $faqs = Faq::orderBy('order_column')->get();
+
+        return view('models.faq.index', compact('faqs'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $categories = FaqCategory::all();
+
+        return view('models.faq.create', compact('categories'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'question' => 'required',
+            'answer' => 'required',
+            'category_id' => 'required'
+        ]);
+
+        $faq = Faq::create($request->all());
+
+        $faq->category()->associate($request->category_id);
+
+        $faq->save();
+
+        Flash::success("FAQ has been added.");
+
+        return redirect()->route('dashboard::faq::edit', $faq->id);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Faq $faq
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Faq $faq)
+    {
+        $page = Page::where('template', 'faq')->first();
+
+        return view('models.faq.show', compact('faq', 'page'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Faq $faq
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Faq $faq)
+    {
+        $categories = FaqCategory::all();
+
+        return view('models.faq.edit', ['model' => $faq, 'categories' => $categories]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param Faq $faq
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Faq $faq)
+    {
+        $this->validate($request, [
+            'question' => 'required',
+            'answer' => 'required',
+            'category_id' => 'required'
+        ]);
+
+        $faq->update($request->all());
+
+        $faq->category()->associate($request->category_id);
+
+        $faq->save();
+
+        Flash::success('FAQ has been updated.');
+
+        return back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Request $request
+     * @param Faq $faq
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request, Faq $faq)
+    {
+        if ($faq->delete()) {
+            Flash::success('FAQ has been deleted.');
+
+            return $request->wantsJson() ? ['success' => true] : redirect()->route('dashboard::faq::index');
+        };
+
+        Flash::warning('An error occurred.');
+
+        return redirect()->route('dashboard::faq::index');
+    }
+}

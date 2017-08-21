@@ -1,0 +1,25 @@
+import store from './stores/app/store';
+
+var app = new Vue({
+    el: '#app',
+
+    data: {
+        showNavbarMenu: false,
+    },
+
+    store,
+
+    methods: {
+        openModal(name) {
+            this.$bus.emit(`open-${name}-modal`)
+        },
+
+        closeModal(name) {
+            this.$bus.emit(`close-${name}-modal`)
+        },
+
+        toggleModal(name) {
+            this.$bus.emit(`toggle-${name}-modal`)
+        },
+    }
+});

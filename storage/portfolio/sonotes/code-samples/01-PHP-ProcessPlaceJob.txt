@@ -1,0 +1,21 @@
+/**
+ * Process the place job.
+ *
+ * @return void
+ */
+public function handle()
+{
+    $this->source = $this->getSource();
+
+    if ($this->notFound) {
+        return event(new PlaceProcessedWithErrors($this->raw, $this->user));
+    }
+
+    $this->checkIn();
+    $this->addPicture();
+    $this->addNote();
+
+    event(new PlaceProcessed($this->source->master, $this->user));
+
+    $this->updateMasterAndSourceDetails();
+}

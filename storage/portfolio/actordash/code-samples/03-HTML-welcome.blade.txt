@@ -1,0 +1,21 @@
+@extends('layouts.app')
+
+@section('content')
+
+    @include('sections.intro')
+    @include('sections.how')
+    @include('sections.meet')
+    @include('sections.different')
+    @include('sections.us')
+    @include('sections.join')
+    @include('partials.footer')
+
+@endsection
+
+@push('scripts')
+<script src="/js/landing.js"></script>
+<script src="/js/jquery.mixitup.js"></script>
+<script>
+    $('.mix-container').mixItUp();
+</script>
+@endpush

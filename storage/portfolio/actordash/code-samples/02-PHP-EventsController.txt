@@ -1,0 +1,28 @@
+class EventsController extends Controller
+{
+    public function index()
+    {
+        $events = Event::upcoming()->with('tickets')->get();
+
+        $next = Event::upcoming()->with('tickets')->first();
+
+        return view('events.index', compact('events', 'next'));
+    }
+
+    public function show(Event $event)
+    {
+        if (!$event->is_active) {
+            return back();
+        }
+
+        $event->load('industryPeople.category');
+
+        if ($event->isSoldOut()) {
+            Flash::overlay('We\'re sorry but there no spots left for selected event.', 'The event is sold out');
+
+            return back();
+        }
+
+        return view('events.show', compact('event'));
+    }
+}

@@ -1,0 +1,88 @@
+<div class="row">
+    <!-- Main -->
+    <div class="col s12 m9">
+
+        <!-- Name -->
+        <div class="card">
+            <div class="title">
+                <h5>@lang('admin.name')</h5>
+                <a class="minimize" href="#">
+                    <i class="mdi-navigation-expand-less"></i>
+                </a>
+                <h6><small>@lang('admin.required')</small></h6>
+            </div>
+            <div class="content">
+                {!! Form::text('name') !!}
+            </div>
+        </div>
+        <!-- /Name -->
+
+        <!-- Elfinder -->
+        <div class="card">
+            <div class="title">
+                <h5>@lang('admin.project-files')</h5>
+                <a class="minimize" href="#">
+                    <i class="mdi-navigation-expand-less"></i>
+                </a>
+            </div>
+            <div class="content">
+                @if($project->id)
+                    <a href="{{ route('elfinder.popup', $project->id) }}" class="btn btn-large" target="_blank"><i class="mdi-file-folder left"></i> @lang('admin.action.open') @lang('admin.project-files')</a>
+                @else
+                    <p>@lang('admin.save-before-uploading')</p>
+                @endif
+            </div>
+        </div>
+        <!-- /Elfinder -->
+
+    </div>
+    <!-- /Main -->
+
+    <!-- Sidebar -->
+    <div class="col s12 m3">
+
+        <!-- Save -->
+        <div class="card">
+            <div class="title">
+                <h5>@lang('admin.action.publish')</h5>
+            </div>
+            <div class="content">
+                @if($project)
+                    <a href="{{ route('admin.project.destroy', $project->id) }}" class="btn-flat waves-effect waves-red" data-method="delete" data-ajax="true" data-redirect="{{ route('admin.project.index') }}" data-confirm="Are you sure?">@lang('admin.action.delete')</a>
+                @endif
+                <button type="submit" class="waves-effect waves-green btn right"><i class="fa fa-floppy-o right"></i>{{ $submitButtonText }}</button>
+            </div>
+        </div>
+        <!-- /Save -->
+
+        <!-- Access -->
+        <div class="card">
+            <div class="title">
+                <h5>@lang('admin.access')</h5>
+                <a class="minimize" href="#">
+                    <i class="mdi-navigation-expand-less"></i>
+                </a>
+            </div>
+            <div class="content">
+                {!! Form::select('teams[]', $teams, $project->teams->lists('id')->toArray(), ['class' => 'select2', 'id' => 'teams_list', 'multiple' => 'multiple']) !!}
+            </div>
+        </div>
+        <!-- /Access -->
+
+        <!-- Tags -->
+        <div class="card">
+            <div class="title">
+                <h5>@choice('admin.model.tag', 2)</h5>
+                <a class="minimize" href="#">
+                    <i class="mdi-navigation-expand-less"></i>
+                </a>
+            </div>
+            <div class="content">
+                {!! Form::select('tag_list[]', $tags, null, ['class' => 'select2', 'multiple' => 'multiple']) !!}
+            </div>
+        </div>
+        <!-- /Tags -->
+
+    </div>
+    <!-- /Sidebar -->
+</div>

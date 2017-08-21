@@ -1,0 +1,14 @@
+class Ring extends Model
+{
+    protected $casts = ['options' => 'json'];
+
+    public function setPriceAttribute($price)
+    {
+        $this->attributes['price'] = Money::fromDollars($price)->inCents();
+    }
+
+    public function getPriceAttribute($price)
+    {
+        return Money::fromCents($price);
+    }
+}

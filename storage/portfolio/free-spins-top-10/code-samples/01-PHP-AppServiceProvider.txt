@@ -1,0 +1,23 @@
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Validator::extend('not_only_digits', function($attribute, $value, $parameters, $validator) {
+            return preg_match("/[^0-9]/", $value);
+        });
+
+        Blade::directive('truncate', function($expression){
+
+            list($string, $length) = explode(',',str_replace(['(',')',' '], '', $expression));
+
+            return "<?php echo strlen({$string}) > {$length} ? substr({$string},0,{$length}).'...' : {$string}; ?>";
+        });
+    }
+
+    ...
+}

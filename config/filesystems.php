@@ -50,7 +50,7 @@ return [
 
         'portfolio' => [
             'driver' => 'local',
-            'root' => storage_path('app/portfolio'),
+            'root' => storage_path('portfolio'),
         ],
 
         'media' => [

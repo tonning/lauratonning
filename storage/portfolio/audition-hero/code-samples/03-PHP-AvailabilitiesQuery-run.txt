@@ -1,0 +1,32 @@
+class AvailabilitiesQuery
+{
+    /**
+     * Find all available freelancers for the given services on the given date.
+     *
+     * @param $serviceIds
+     * @param $date
+     * @param $duration
+     *
+     * @return mixed
+     */
+    public static function run($serviceIds, $date, $duration)
+    {
+        $services = Service::whereIn('id', $serviceIds)->get();
+
+        return Availability::laterOnOnDate($date)->forFreelancersProviding($serviceIds)->get()
+            ->groupBy(function ($availability) {
+                return $availability->from->toDateTimeString();
+            })
+            ->map(function ($timeslots) use ($duration, $services) {
+                return self::filterFreelancerWhoCanBeBooked($timeslots, $duration, $services);
+            })
+            ->map(function ($timeslots) use ($services) {
+                return self::groupByServices($timeslots, $services);
+            })
+            ->reject(function ($services) use ($serviceIds) {
+                return (count($services) != count($serviceIds));
+            });
+    }
+
+    ...
+}

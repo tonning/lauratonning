@@ -1,0 +1,17 @@
+/**
+ * Refund a booking.
+ */
+public function refund()
+{
+    $paymentGateway = app()->make(PaymentGateway::class);
+
+    foreach ($this->chargeIds() as $chargeId) {
+        try {
+            $paymentGateway->refund($chargeId);
+        } catch (InvalidRequest $exception) {
+            throw new RefundFailedException($exception->getMessage());
+        }
+    }
+
+    $this->markAsRefunded();
+}

@@ -1,0 +1,11 @@
+@extends('admin.master')
+
+@section('content')
+
+    {!! Form::model($project = new \App\Project(), ['method' => 'POST', 'route' => ['admin.project.store']]) !!}
+
+        @include('admin.projects.form', ['submitButtonText' => trans('admin.action.save')])
+
+    {!! Form::close() !!}
+
+@stop

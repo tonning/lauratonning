@@ -1,0 +1,44 @@
+class Money
+{
+    private $cents;
+
+    private function __construct($cents)
+    {
+        $this->cents = (integer) $cents;
+    }
+
+    public static function fromDollars($dollars)
+    {
+        return new static($dollars * 100);
+    }
+
+    public static function fromCents($cents)
+    {
+        return new static($cents);
+    }
+
+    public function inCents()
+    {
+        return (int) $this->cents;
+    }
+
+    public function inDollars()
+    {
+        return ceil( $this->cents / 100 );
+    }
+
+    public function inDollarsAndCents()
+    {
+        return number_format( $this->cents / 100, 2 );
+    }
+
+    public function formatInDollars()
+    {
+        return (string) '$' . number_format(ceil( $this->cents / 100 ), 0);
+    }
+
+    public function formatInDollarsAndCents()
+    {
+        return '$' . number_format( $this->cents / 100, 2 );
+    }
+}

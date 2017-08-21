@@ -1,0 +1,61 @@
+class Event extends Model
+{
+    protected $fillable = ['name', 'venue', 'date_and_time', 'info'];
+
+    protected $dates = ['date_and_time'];
+
+    public function scopeUpcoming($query)
+    {
+        return $query->where('date_and_time', '>', Carbon::now())->active();
+    }
+
+    public function getPriceAttribute($price)
+    {
+        return Money::fromCents($price);
+    }
+
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value * 100;
+    }
+
+    public function getPriceInDollarsAttribute()
+    {
+        return Money::fromCents($this->price)->inDollarsFormatted();
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function industryPeople()
+    {
+        return $this->belongsToMany(IndustryPerson::class);
+    }
+
+    public function isSoldOut()
+    {
+        return $this->spotsLeft() == 0;
+    }
+
+    public function spotsLeft()
+    {
+        return ($this->spots - $this->tickets->count() > 0) ? ($this->spots - $this->tickets->count()) : 0;
+    }
+
+    /**
+     * Scope that returns active events
+     *
+     * @param $query
+     *
+     * @return mixed
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
+}

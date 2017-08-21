@@ -1,0 +1,48 @@
+<template>
+    <div class="card Day">
+        <header class="card-header">
+            <p class="card-header-title">
+                {{ date | relativeDateForHumans }}
+            </p>
+        </header>
+        <div v-if="hasTimeslots" class="card-content Day__content">
+            <timeslot v-for="(timeslot, key) in orderedTimeslots" :key="key" :timeslot="timeslot[0]" :components="timeslot[1]"></timeslot>
+        </div>
+        <div v-else class="card-content">
+            <p><a href="mailto:info@auditionherohq.com">Email</a> or text/call <a href="tel:2018004376">(201) 800-4376</a> to book a service on this date.</p>
+            <p>You may also select another time that's convenient for you.</p>
+        </div>
+    </div>
+</template>
+
+<script>
+    import { mapGetters } from 'vuex';
+    import Timeslot from './Timeslot.vue';
+
+    export default {
+        components: {
+            Timeslot,
+        },
+
+        props: ['date', 'timeslots'],
+
+        computed: {
+            ...mapGetters([
+                'isLoading',
+            ]),
+
+            orderedTimeslots() {
+                return _.chain(this.timeslots)
+                    .toPairs()
+                    .sortBy(timeslot => {
+                        return new Date(timeslot[0])
+                    })
+                    .value();
+            },
+
+            hasTimeslots() {
+                return _.size(this.timeslots) > 0;
+            },
+        },
+    }
+</script>

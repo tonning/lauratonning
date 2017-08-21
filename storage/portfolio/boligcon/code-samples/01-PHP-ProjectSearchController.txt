@@ -1,0 +1,14 @@
+class ProjectSearchController extends Controller
+{
+    public function search(Request $request)
+    {
+        $projects = Project::where('name', 'LIKE', "%{$request->search}%")
+            ->orWhereHas('tags', function ($query) use ($request) {
+                $query->where('name', 'LIKE', "%{$request->search}%");
+            })
+            ->sortable(['name'])
+            ->paginate(15);
+
+        return view('admin.projects.index', compact('projects'));
+    }
+}

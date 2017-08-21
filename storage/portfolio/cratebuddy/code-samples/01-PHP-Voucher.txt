@@ -1,0 +1,76 @@
+class Voucher extends Model
+{
+    protected $table = 'gifts';
+
+    protected $fillable = ['duration', 'created_by_email', 'stripe_payment_id', 'last_four', 'redeemed'];
+
+    protected $dates = ['redeemed_at', 'created_at', 'updated_at', 'subscription_ends_at'];
+
+    protected $casts = ['redeemed' => 'boolean'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        $optimus = app('OptimusVoucher');
+
+        static::created(function ($voucher) use ($optimus) {
+            $voucher->code = $optimus->encode($voucher->id);
+            $voucher->save();
+        });
+    }
+
+    public function scopeCode($query, $code)
+    {
+        return $query->where('code', $code)->firstOrFail();
+    }
+
+    public function receiver()
+    {
+        return $this->belongsTo(User::class, 'redeemed_by');
+    }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function link($content)
+    {
+        return str_replace('[[LINK_TO_VOUCHER]]', route('gift.voucher', $this->code), $content);
+    }
+
+    public function replaceShortCodes($content)
+    {
+        $content = str_replace('[[FIRSTNAME]]', $this->receiver->firstName, $content);
+        $content = str_replace('[[LASTNAME]]', $this->receiver->lastName, $content);
+        $content = str_replace('[[DATE]]', $this->subscription_ends_at->format('d/m/Y'), $content);
+        $content = str_replace('[[DAYS]]', Carbon::now()->diffInDays($this->subscription_ends_at), $content);
+        $content = str_replace('[[LINK_TO_VOUCHER]]', route('gift.voucher', $this->code), $content);
+
+        return $content;
+    }
+
+    public function replaceShortCodesWithoutReceiver($content)
+    {
+        $content = str_replace('[[LINK_TO_VOUCHER]]', route('gift.voucher', $this->code), $content);
+
+        return $content;
+    }
+
+    protected function savePDF($type = 'voucher')
+    {
+        $pdf = App::make('snappy.pdf.wrapper');
+
+        $pdf->loadView('client.gift.' . $type, ['voucher' => $this])
+            ->setPaper('a4')
+            ->setOption('margin-top', 0)
+            ->setOption('margin-right', 0)
+            ->setOption('margin-bottom', 0)
+            ->setOption('margin-left', 0);
+
+        $pdf->save(storage_path('app/vouchers/' . $type . '_' . $this->code . '.pdf'));
+
+        return $this;
+    }
+}

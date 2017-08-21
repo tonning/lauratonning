@@ -1,0 +1,55 @@
+class FacebookController extends LoginController
+{
+    protected $facebook;
+
+    /**
+     * Facebook login controller.
+     *
+     * @param FacebookAuth $facebook
+     */
+    public function __construct(FacebookAuth $facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * Redirect to Facebook authentication url.
+     *
+     * @return mixed
+     */
+    public function redirectToProvider()
+    {
+        return $this->facebook->redirectToAuthenticateUrl();
+    }
+
+    /**
+     * Authenticate the user or redirect if any errors.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function handleProviderCallback()
+    {
+        try {
+            auth()->login($this->facebook->authenticate(), $remember = true);
+
+            return $this->redirectToIntendedRoute();
+        } catch (TokenMismatchException $exception) {
+            flash('Your session has expired, please try again.')->warning();
+
+            return redirect()->route('login');
+        } catch (FacebookException $e) {
+            flash('An error occured trying to login with Facebook. Please try again.')->warning();
+
+            return redirect()->route('login');
+        } catch (VisitorDeniedOAuthRequestException $e) {
+            flash('Please accept the Facebook request in order to login with Facebook.')->error();
+
+            return redirect()->route('login');
+        } catch (IntegrationAlreadyLinkedToAnotherAccountException $e) {
+            flash('<span>The Facebook account has already been linked to another account. If you believe this is a mistake then please
+                <a href="'.route('logout').'">logout</a> and log back in with Facebook and disconnect it.</span>')->warning();
+
+            return back();
+        }
+    }
+}

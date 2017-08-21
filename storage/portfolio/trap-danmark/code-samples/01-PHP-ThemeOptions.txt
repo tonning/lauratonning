@@ -1,0 +1,92 @@
+$TrapDanmarkPanel = $titan->createAdminPanel( array(
+    'name' => 'TrapDanmark',
+) );
+
+/**********************************
+ * GENERAL TAB
+ *********************************/
+
+$general = $TrapDanmarkPanel->createTab( array(
+    'name' => 'GENERALT',
+) );
+
+$general->createOption( array(
+        'name' => 'Logo',
+        'id' => 'site_logo',
+        'type' => 'upload',
+    ) );
+
+$general->createOption( array(
+        'name' => 'Logo størrelse',
+        'id' => 'site_logo_width',
+        'type' => 'number',
+        'desc' => 'Max bredde på logo',
+        'min' => '150',
+        'max' => '400',
+        'step' => '10',
+        'default' => '200',
+    ) );
+
+$general->createOption( array(
+        'name' => 'Instagram kontonavn',
+        'id' => 'social_instagram',
+        'type' => 'text',
+    ) );
+
+$general->createOption( array(
+        'name' => 'LinkedIn kontonavn',
+        'id' => 'social_linkedin',
+        'type' => 'text',
+    ) );
+
+$general->createOption( array(
+        'name' => 'Twitter kontonavn',
+        'id' => 'social_twitter',
+        'type' => 'text',
+    ) );
+
+$general->createOption( array(
+    'name' => 'Facebook kontonavn',
+    'id' => 'social_facebook',
+    'type' => 'text',
+) );
+
+
+/**********************************
+ * HOME PAGE TAB
+ *********************************/
+
+$frontpage = $TrapDanmarkPanel->createTab( array(
+    'name' => 'FORSIDE',
+) );
+
+$frontpage->createOption( array(
+    'name' => 'Øverste overskift i boblen',
+    'id' => 'frontpage_upper',
+    'type' => 'text'
+) );
+
+$frontpage->createOption( array(
+    'name' => 'Nederste overskift i boblen',
+    'id' => 'frontpage_lower',
+    'type' => 'text'
+) );
+
+$frontpage->createOption( array(
+    'name' => 'Tekst i boblen',
+    'id' => 'frontpage_text',
+    'type' => 'editor'
+) );
+
+$frontpage->createOption( array(
+    'name' => 'Overskift til Donatorer og Samarbejdspartner',
+    'id' => 'frontpage_donators_header',
+    'type' => 'text'
+) );
+
+/**********************************
+ * SAVE AND RESET BUTTON
+ *********************************/
+$TrapDanmarkPanel->createOption( array(
+    'type' => 'save'
+) );
