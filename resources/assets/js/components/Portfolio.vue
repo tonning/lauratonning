@@ -24,7 +24,7 @@
                     <div class="box content has-text-justified p1">
                         <figure>
                             <a :href="'/sites/' + site.slug">
-                                <div class="is-flex flex-column mb20">
+                                <div class="is-flex flex-column mb20" style="flex-direction: column;">
                                     <img src="images/browser-toolbar.png" alt="browser-toolbar">
                                     <img :src="site.media.featured">
                                 </div>
