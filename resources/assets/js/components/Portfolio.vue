@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="title">Sites Portfolio</h1>
             <h2 class="subtitle">
-                A small selection of web application all built and some also designed by me.
+                A small selection of web applications all built and some also designed by me.
                 <br>
                 <small>The full source code for this website is available at <a href="https://github.com/tonning/kristoffertonning">https://github.com/tonning/kristoffertonning</a></small>
                 <span class="is-pulled-right">

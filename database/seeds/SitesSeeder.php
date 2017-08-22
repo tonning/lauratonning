@@ -27,7 +27,7 @@ class SitesSeeder extends Seeder
 
         $this->addSite('ActorDash', 'https://actordash.com', [
             'Laravel', 'Vue.js', 'MySQL', 'Nginx', 'Scss'
-        ], 'Initially build as a WordPress application, but I quickly migrated it over to Laravel as soon as we wanted to expanded on the feature set.');
+        ], 'Initially built as a WordPress application, but I quickly migrated it over to Laravel as soon as we wanted to expanded on the feature set.');
 
         $this->addSite('Clubhouse', 'http://clubhouse.team', [
             'Laravel', 'Vue.js', 'Sass',
