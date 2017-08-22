@@ -10,8 +10,12 @@
 
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
+    @include('layouts._partials.google-tag-manager', ['section' => 'head'])
+
 </head>
 <body>
+
+    @include('layouts._partials.google-tag-manager', ['section' => 'body'])
 
     <div id="app">
         @yield('content')
