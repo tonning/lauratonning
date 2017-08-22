@@ -213,7 +213,7 @@ class Caption
      */
     protected function removePath($site, $type)
     {
-        $this->caption = str_replace("portfolio/{$site}/{$type}/", '', $this->caption);
+        $this->caption = str_replace("{$site}/{$type}/", '', $this->caption);
 
         return $this;
     }
