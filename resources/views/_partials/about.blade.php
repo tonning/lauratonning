@@ -111,47 +111,6 @@
                         </p>
                     </div>
                 </article>
-
-                <article class="media">
-                    <div class="media-left is-hidden-mobile">
-                        <figure class="image is-128x128">
-                            <img src="/images/resume-thumbnail.png" alt="Resume">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p><strong>Resume</strong><br class="is-hidden-desktop"><br></p>
-                        <p>
-                            If you wish to downlad a full PDF version of my resume, please enter your company email.
-                        </p>
-                        <br>
-                        @if ($errors->all())
-                            <div class="notification mt20 content">
-                                @if ($errors->count() > 1)
-                                    <ul class="mt0">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{!! $error !!}</li>
-                                        @endforeach
-                                    </ul>
-                                @else
-                                    {!! $errors->first() !!}
-                                @endif
-                            </div>
-                        @endif
-                        <form action="{{ route('download-resume') }}" method="POST">
-                            {{ csrf_field() }}
-                            <div class="field has-addons">
-                                <div class="control">
-                                    <input class="input" type="text" name="email" placeholder="Company email">
-                                </div>
-                                <div class="control">
-                                    <button type="submit" class="button is-info">
-                                        Download
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </article>
             </div>
         </div>
     </div>
