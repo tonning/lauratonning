@@ -1742,16 +1742,16 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "5f61739587510e3035e00cc34cb18314ee63e8e3"
+                "reference": "a4afdb48554b075ff5272ba7a2fb2b50bee2d0db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/5f61739587510e3035e00cc34cb18314ee63e8e3",
-                "reference": "5f61739587510e3035e00cc34cb18314ee63e8e3",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/a4afdb48554b075ff5272ba7a2fb2b50bee2d0db",
+                "reference": "a4afdb48554b075ff5272ba7a2fb2b50bee2d0db",
                 "shasum": ""
             },
             "require": {
@@ -1788,7 +1788,7 @@
                 "laravel-sluggable",
                 "spatie"
             ],
-            "time": "2017-04-13T14:48:58+00:00"
+            "time": "2018-05-08T07:54:18+00:00"
         },
         {
             "name": "spatie/laravel-tinker-tools",
