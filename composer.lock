@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "373c286a131d16ba50a22d346104c30d",
+    "content-hash": "f7fb9e66d270789e3c94f63ab671b077",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -289,23 +289,33 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v1.14.2",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "7117bca9b778b121f4e562c9653037c07ff95d68"
+                "reference": "0e1879c30093bf1e788e1238523850313b00f3db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/7117bca9b778b121f4e562c9653037c07ff95d68",
-                "reference": "7117bca9b778b121f4e562c9653037c07ff95d68",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/0e1879c30093bf1e788e1238523850313b00f3db",
+                "reference": "0e1879c30093bf1e788e1238523850313b00f3db",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
+                "php": ">=5.5",
                 "psr/log": "1.*"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Clockwork\\Support\\Laravel\\ClockworkServiceProvider"
+                    ],
+                    "aliases": {
+                        "Clockwork": "Clockwork\\Support\\Laravel\\Facade"
+                    }
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Clockwork\\": "Clockwork/"
@@ -319,18 +329,21 @@
                 {
                     "name": "itsgoingd",
                     "email": "itsgoingd@luzer.sk",
-                    "homepage": "http://twitter.com/itsgoingd"
+                    "homepage": "https://twitter.com/itsgoingd"
                 }
             ],
-            "description": "Server-side component of Clockwork, a Chrome extension for PHP development",
-            "homepage": "http://github.com/itsgoingd/clockwork",
+            "description": "php dev tools integrated to your browser",
+            "homepage": "https://underground.works/clockwork",
             "keywords": [
+                "Devtools",
                 "debugging",
                 "laravel",
                 "logging",
-                "profiling"
+                "lumen",
+                "profiling",
+                "slim"
             ],
-            "time": "2017-05-31T20:09:12+00:00"
+            "time": "2019-07-25T22:55:32+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1732,9 +1745,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
+                    "homepage": "https://murze.be"
                 }
             ],
             "description": "Associate files with Eloquent models",
@@ -3614,8 +3627,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sb@sebastian-bergmann.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -3882,8 +3895,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
