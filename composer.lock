@@ -697,16 +697,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.16.0",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "d0445305e308d9207430680acfd580557b679ddc"
+                "reference": "4e553dae1a9402adbe11c81430a64675dc97b4fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/d0445305e308d9207430680acfd580557b679ddc",
-                "reference": "d0445305e308d9207430680acfd580557b679ddc",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/4e553dae1a9402adbe11c81430a64675dc97b4fc",
+                "reference": "4e553dae1a9402adbe11c81430a64675dc97b4fc",
                 "shasum": ""
             },
             "require": {
@@ -717,7 +717,7 @@
                 "illuminate/contracts": "~5.0",
                 "mockery/mockery": "~0.9",
                 "pagerfanta/pagerfanta": "~1.0.0",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "^4.8.35 || ^7.5",
                 "squizlabs/php_codesniffer": "~1.5",
                 "zendframework/zend-paginator": "~2.3"
             },
@@ -757,7 +757,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2017-03-12T01:28:43+00:00"
+            "time": "2019-05-10T02:16:43+00:00"
         },
         {
             "name": "league/glide",
@@ -1456,25 +1456,25 @@
         },
         {
             "name": "spatie/fractalistic",
-            "version": "2.3.2",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/fractalistic.git",
-                "reference": "012c4182203ba9127bb0a31cec3c211ce68227d9"
+                "reference": "9d29952f4552d6fc117e1f44f89d8dfdd36c393d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/012c4182203ba9127bb0a31cec3c211ce68227d9",
-                "reference": "012c4182203ba9127bb0a31cec3c211ce68227d9",
+                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/9d29952f4552d6fc117e1f44f89d8dfdd36c393d",
+                "reference": "9d29952f4552d6fc117e1f44f89d8dfdd36c393d",
                 "shasum": ""
             },
             "require": {
-                "league/fractal": "^0.16.0",
-                "php": "^5.6|^7.0"
+                "league/fractal": "^0.18.0",
+                "php": "^7.0"
             },
             "require-dev": {
                 "illuminate/pagination": "~5.3.0|~5.4.0",
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^5.7.21"
             },
             "type": "library",
             "autoload": {
@@ -1503,7 +1503,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-07-24T08:06:12+00:00"
+            "time": "2019-05-13T07:08:06+00:00"
         },
         {
             "name": "spatie/image",
@@ -1607,23 +1607,23 @@
         },
         {
             "name": "spatie/laravel-fractal",
-            "version": "4.3.0",
+            "version": "4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "a3598933f15f74edcb44edb3ff3e0afa23663907"
+                "reference": "445364122d4e6d6da6f599939962e689668c2b5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a3598933f15f74edcb44edb3ff3e0afa23663907",
-                "reference": "a3598933f15f74edcb44edb3ff3e0afa23663907",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/445364122d4e6d6da6f599939962e689668c2b5f",
+                "reference": "445364122d4e6d6da6f599939962e689668c2b5f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
                 "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
                 "php": "^5.6|^7.0",
-                "spatie/fractalistic": "^2.0"
+                "spatie/fractalistic": "^2.5"
             },
             "require-dev": {
                 "orchestra/testbench": "~3.2.0|3.3.0|~3.4.0",
@@ -1671,7 +1671,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-07-26T14:15:40+00:00"
+            "time": "2017-08-22T17:52:05+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
