@@ -31,7 +31,7 @@ class ResumeDownloaded extends Mailable implements ShouldQueue
     public function build()
     {
         return $this->markdown('emails/resume-downloaded')
-            ->subject('Resume downloaded from KristofferTonning.com')
+            ->subject('Resume downloaded from LauraTonning.com')
             ->with('email', $this->email);
     }
 }

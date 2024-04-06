@@ -6,13 +6,13 @@
                 <article class="media">
                     <div class="media-left is-hidden-mobile">
                         <figure class="image is-128x128">
-                            <img src="/images/KristofferTonning.jpg" alt="Kristoffer Tonning">
+                            <img src="/images/LauraTonning.jpg" alt="Laura Tonning">
                         </figure>
                     </div>
                     <div class="media-content">
                         <div class="content">
                             <p>
-                                <strong>Kristoffer Tonning</strong>
+                                <strong>Laura Tonning</strong>
                                 <a href="https://github.com/tonning/" target="_blank">
                                     <small><svgicon icon="brands/github" height="24" width="24" color="black" class=""></svgicon></small>
                                 </a>
@@ -22,11 +22,11 @@
                                 <a href="https://linkedin.com/in/tonning" target="_blank">
                                     <small><svgicon icon="brands/linkedin" height="24" width="24" color="black" class=""></svgicon></small>
                                 </a>
-                                <a href="mailto:hello@kristoffertonning.com" target="_blank">
+                                <a href="mailto:hello@tonning.dev" target="_blank">
                                     <small><svgicon icon="brands/mail" height="24" width="24" color="black" class=""></svgicon></small>
                                 </a>
                                 <br>
-                                <img src="/images/KristofferTonning.jpg" alt="Kristoffer Tonning" class="is-128x128 is-hidden-desktop" style="width: 128px; float: left; margin-right: 20px; margin-top: 10px;">
+                                <img src="/images/LauraTonning.jpg" alt="Laura Tonning" class="is-128x128 is-hidden-desktop" style="width: 128px; float: left; margin-right: 20px; margin-top: 10px;">
                                 Accomplished web developer with 10+ years of experience providing clean, readable, and maintainable code.<br>
                                 Actively working in Laravel every day for the past 3+ years. Attention to detail in all things.<br>
                                 Excited to tackle challenges and motivated by problem-solving and passionate about enriching peoples’ lives through technology.<br>
